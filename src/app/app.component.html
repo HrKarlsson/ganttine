@@ -1,3 +1,48 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <md-menu #appMenu="mdMenu">
+      <button md-menu-item> Settings </button>
+      <button md-menu-item> Help </button>
+    </md-menu>
+
+    <button md-icon-button [mdMenuTriggerFor]="appMenu">
+   <md-icon>build</md-icon>
+</button>
+  </md-sidenav>
+
+  <!-- primary content -->
+  <div class="my-content">
+    <button md-button (click)="sidenav.open()">
+      Open sidenav
+    </button>
+    <md-tab-group>
+      <md-tab label="One">
+        <h1>Some tab content</h1>
+
+
+        <p-accordion>
+          <p-accordionTab header="Header 1">
+            Content 1
+          </p-accordionTab>
+          <p-accordionTab header="Header 2">
+            Content 2
+          </p-accordionTab>
+          <p-accordionTab header="Header 3">
+            Content 3
+          </p-accordionTab>
+        </p-accordion>
+
+
+        <p-overlayPanel #op>
+          Content
+        </p-overlayPanel>
+
+      </md-tab>
+      <md-tab label="Two">
+        <h1>Some more tab content</h1>
+        <p>...</p>
+        <app-entry></app-entry>
+      </md-tab>
+    </md-tab-group>
+  </div>
+</md-sidenav-container>

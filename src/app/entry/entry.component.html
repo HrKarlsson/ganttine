@@ -1,0 +1,17 @@
+<md-card class="example-card">
+  <md-card-header>
+    <md-card-title>Shiba Inu</md-card-title>
+    <md-card-subtitle>Dog Breed</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <p [@body]="body">
+      <ngx-charts-bar-horizontal-stacked [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+      </ngx-charts-bar-horizontal-stacked>
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button (click)="toggle()" md-button>Do</button>
+  </md-card-actions>
+</md-card>
